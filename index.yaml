@@ -45,6 +45,25 @@ entries:
         - name: Homepage
           url: https://www.kubecost.com
     apiVersion: v2
+    appVersion: development
+    created: "2023-12-26T17:12:23.323182806Z"
+    dependencies:
+    - condition: global.grafana.enabled
+      name: grafana
+      repository: file://./charts/grafana
+      version: ~1.17.2
+    description: A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor
+      cloud costs.
+    digest: 9acbf2bd091ea3fbb25760ed256510ade28352d80e0934d709690536d836fa3b
+    name: kubecost
+    urls:
+    - https://chipzoller.github.io/kubecosttwo/kubecost-3.0.3.tgz
+    version: 3.0.3
+  - annotations:
+      artifacthub.io/links: |
+        - name: Homepage
+          url: https://www.kubecost.com
+    apiVersion: v2
     appVersion: 2.0.0
     created: "2023-12-26T16:54:26.608746151Z"
     dependencies:
@@ -59,4 +78,4 @@ entries:
     urls:
     - https://chipzoller.github.io/kubecosttwo/kubecost-3.0.2.tgz
     version: 3.0.2
-generated: "2023-12-26T16:54:26.598305364Z"
+generated: "2023-12-26T17:12:23.313797221Z"

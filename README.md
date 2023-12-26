@@ -6,8 +6,35 @@ Follow the instructions below to add this to your Helm repositories and then ins
 
 ## Instructions
 
+Add this chart repository to Helm.
+
 ```sh
 helm repo add kubecosttwo https://chipzoller.github.io/kubecosttwo/
+```
+
+Scan for new chart versions.
+
+```sh
+helm repo update kubecosttwo
+```
+
+Optionally, view available versions of the chart and the Kubecost application versions they deploy.
+
+```sh
+helm search repo kubecosttwo -l
+```
+
+```sh
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+kubecosttwo/kubecost    3.1.0           2.1.0           A Helm chart that sets up Kubecost, Prometheus,...
+kubecosttwo/kubecost    3.0.4           2.0.0           A Helm chart that sets up Kubecost, Prometheus,...
+kubecosttwo/kubecost    3.0.3           2.0.0           A Helm chart that sets up Kubecost, Prometheus,...
+kubecosttwo/kubecost    3.0.2           2.0.0           A Helm chart that sets up Kubecost, Prometheus,...
+```
+
+Install the latest version of the chart.
+
+```sh
 helm install kubecost -n kubecost kubecosttwo/kubecost --create-namespace
 ```
 

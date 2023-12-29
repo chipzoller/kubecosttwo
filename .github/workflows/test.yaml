@@ -85,8 +85,8 @@ jobs:
       - name: Run Helm tests 
         run: helm test -n kubecost kubecost
 
-      - name: Uninstall chart
-        run: helm uninstall kubecost -n kubecost --no-hooks --wait
+      - name: Upgrade to current working version
+        run: helm upgrade kubecost -n kubecost kubecost/ --wait
 
-      - name: Cleanup all Pods in Kubecost Namespace
-        run: kubectl -n kubecost delete deployments,daemonsets,statefulsets,pods --all --force
+      - name: Wait for ready 
+        run: kubectl wait -n kubecost --for=condition=ready pod --selector app.kubernetes.io/name=cost-analyzer --timeout=120s

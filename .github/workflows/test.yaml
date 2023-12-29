@@ -74,7 +74,6 @@ jobs:
   
       # Install the chart with default values and check results.
       - name: Install Kubecost chart
-        working-directory: ./cost-analyzer
         run: helm install --wait --wait-for-jobs kubecost https://kubecost.github.io/cost-analyzer/ -n kubecost --version ${{ matrix.target }}
         # run: ct install --namespace kubecost --chart-dirs=cost-analyzer/ --charts cost-analyzer/
 

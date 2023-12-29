@@ -77,7 +77,7 @@ jobs:
         run: |
           helm repo add kubecost https://kubecost.github.io/cost-analyzer/
           helm repo update
-          helm install --wait --wait-for-jobs kubecost kubecost/cost-analyzer -n kubecost --version ${{ matrix.target }}
+          helm install --wait --wait-for-jobs kubecost kubecost/cost-analyzer -n kubecost --create-namespace --version ${{ matrix.target }}
 
       - name: Wait for ready 
         run: kubectl wait -n kubecost --for=condition=ready pod --selector app.kubernetes.io/name=cost-analyzer --timeout=120s
